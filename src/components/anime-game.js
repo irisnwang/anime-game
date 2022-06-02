@@ -78,10 +78,10 @@ function AnimeGame() {
     <div className="container justify-content-center">
       {correctness()}
       <div>
-        You said: {answer}
+        You said: {time.current.value}
       </div>
       <div>
-        Actual: {questions[count]["correct-answer"]}
+        Actual: {questions[count]["answer-string"]}
       </div>
       <iframe height="360px" width="640px"
         src={questions[count]["youtube-link"]}
