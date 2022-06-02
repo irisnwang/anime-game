@@ -7,7 +7,6 @@ import InputMask from "react-input-mask";
 function AnimeGame() {
   // Hooks
   const [correct, setCorrect] = useState()
-  const [answer, setAnswer] = useState()
   const [show, setShow] = useState(0)
   const [count, setCount] = useState(0)
   const [numCorrect, setNumCorrect] = useState(0)
@@ -26,7 +25,6 @@ function AnimeGame() {
     x = x + parseInt(time.current.value.charAt(2)) * 10
     x = x + parseInt(time.current.value.charAt(3))
 
-    setAnswer(x)
     const abs_diff = Math.abs(x - questions[count]["correct-answer"]);
     const isCorrect = abs_diff <= 2
     setCorrect(isCorrect)
