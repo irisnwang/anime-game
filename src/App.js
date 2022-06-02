@@ -7,7 +7,7 @@ function App() {
   return (
       <div>
         <div className="row mt-2">
-          <h1 className="text-center">Guess The Point in The Anime Opening Song at which a Character Starts Running</h1>
+          <h1 className="text-center">Guess the Point in the Anime Opening Song at Which a Character Starts Running</h1>
         </div>
         <AnimeGame/>
       </div>
