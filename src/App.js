@@ -1,17 +1,27 @@
 import './App.css';
 import './vendors/bootstrap/css/bootstrap.min.css';
 import './vendors/fontawesome/css/all.min.css';
-import AnimeGame from "./components";
+import Game from "./components";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import AnimeGame from "./components/anime-game";
+import AboutPage from "./components/about-page";
 
 function App() {
   return (
-      <div>
-        <div className="row mt-2">
-          <h1 className="text-center">Guess the Point in the Anime Opening Song at Which a Character Starts Running</h1>
+      <BrowserRouter>
+        <div className="container">
+          <Routes>
+            <Route path="/" element={<Game />}>
+              <Route index
+                     element={<AnimeGame />} />
+              <Route path="about"
+                     exact={true}
+                     element={<AboutPage/>} />
+
+            </Route>
+          </Routes>
         </div>
-        <AnimeGame/>
-      </div>
-  );
+      </BrowserRouter>  );
 }
 
 export default App;

@@ -1,0 +1,7 @@
+- Make it beautiful (add pictures?)
+- Shift information into database
+- Add shuffling ability
+- Add ability to pick number of questions
+- Add restarts (mid-game, post-game, and change settings)
+- Add how-to-play page
+- Clean up main game into elements
