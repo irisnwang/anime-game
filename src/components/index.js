@@ -60,20 +60,21 @@ function AnimeGame() {
           <h2>Song: {questions[count]["song-title"]}</h2>
           <h3>By {questions[count].artist}</h3>
           <AudioPlayer driveLink={questions[count]["drive-link"]}/>
-          <InputMask
-              formatChars={formatChars}
-              maskChar=" "
-              className="form-control w-auto"
-              mask='9:59'
-              ref={time}>
-          </InputMask>
+            <InputMask
+                formatChars={formatChars}
+                maskChar=" "
+                className="form-control w-auto"
+                mask='9:59'
+                ref={time}>
+            </InputMask>
+
           <button onClick={handleEnter} className="btn btn-primary">Enter
           </button>
         </div>
     );
   } else if (show === 1) {
     return (
-    <div>
+    <div className="container justify-content-center">
       {correctness()}
       <div>
         You said: {answer}
@@ -81,19 +82,18 @@ function AnimeGame() {
       <div>
         Actual: {questions[count]["correct-answer"]}
       </div>
-      <iframe width="100%" height="350px"
-    className="mt-2"
-    style={{width: "100%"}}
-    src={questions[count]["youtube-link"]}
-    title="YouTube video player" frameBorder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowFullScreen/>
+      <iframe height="360px" width="640px"
+        src={questions[count]["youtube-link"]}
+        title="YouTube video player" frameBorder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowFullScreen/>
+    <br/>
       <button onClick={handleNext} className="btn btn-primary">Next</button>
     </div>
   );
   } else if (show === 2)
     return(
-        <div>
+        <div className="container">
           <h1>Finished!</h1>
           <h2>You got: {numCorrect}/10 right!</h2>
         </div>);
