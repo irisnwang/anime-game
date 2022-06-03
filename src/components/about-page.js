@@ -1,8 +1,12 @@
 const AboutPage = () => {
   return (
-      <div className="container">
+      <div className="container mt-2">
         <p>
           This game is developed by Iris Wang.
+        </p>
+        <p>
+          There is a common <a href="https://tvtropes.org/pmwiki/pmwiki.php/Main/CreditsRunningSequence">trope</a> in 2000s anime openings that characters are always running.
+          This game is a riff on that because it often (but not always!) coincides with some sort of dramatic beat drop.
         </p>
         <p>
           Some background info about the game: openings are chosen arbitrarily by animes I know/like.
@@ -12,6 +16,7 @@ const AboutPage = () => {
             <li>The character is not running in the context of some other action (therefore, a lot of
             sports and action animes didn't make the cut as characters were playing the sport or fighting)</li>
             <li>The character is running for at least a few seconds, or performing the run-up to a leap</li>
+            <li>If there is more than one running sequence in the opening, the timestamp corresponds to the first such sequence</li>
           </ol>
           If this seems not-that-logical, it's because I made this app for fun and it doesn't have to make sense.
         </p>

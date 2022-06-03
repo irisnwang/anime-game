@@ -6,7 +6,9 @@ function Game() {
       <div>
 
         <div className="row mt-2">
-          <h1 className="text-center">Guess the Point in the Anime Opening Song at Which a Character Starts Running</h1>
+          <h1 className="text-center">
+            <a href="/" className="text-black text-decoration-none">Guess the Point in the Anime Opening Song at Which a Character Starts Running</a>
+          </h1>
         </div>
         <div className="container">
           <NavigationBar/>
