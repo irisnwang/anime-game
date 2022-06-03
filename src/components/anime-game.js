@@ -3,7 +3,7 @@ import formatChars from "./game-components/text-box";
 import questions from "./game-components/example-question.json"
 import {useState, useRef, useEffect} from "react";
 import InputMask from "react-input-mask";
-import {fetchQuestionByID} from "../services/questions-service";
+// import {fetchQuestionByID} from "../services/questions-service";
 
 function AnimeGame() {
   // Hooks
