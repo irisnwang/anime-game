@@ -1,7 +1,7 @@
 import AudioPlayer from "./game-components/audio-player";
 import formatChars from "./game-components/text-box";
 import questions from "./game-components/example-question.json"
-import {useState, useRef, useEffect} from "react";
+import {useState, useRef} from "react";
 import InputMask from "react-input-mask";
 // import {fetchQuestionByID} from "../services/questions-service";
 
@@ -15,12 +15,6 @@ function AnimeGame() {
   const [max, setMax] = useState(11);
   const time = useRef()
   const [array, setArray] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
-
-  useEffect(() => {
-    // shuffle array
-    shuffle();
-    getNextQuestion(array[count]);
-  }, [])
 
   const shuffle = () => {
     const shuffledArray = array.sort((a, b) => 0.5 - Math.random());
@@ -76,7 +70,9 @@ function AnimeGame() {
   }
 
   const handleBegin = () => {
-    setShow(0)
+    shuffle();
+    getNextQuestion(array[count]);
+    setShow(0);
   }
 
   switch (show) {
@@ -98,16 +94,15 @@ function AnimeGame() {
             <h2>Song: {question["song-title"]}</h2>
             <h3>By {question.artist}</h3>
             <AudioPlayer driveLink={question["drive-link"]}/>
-            <InputMask
-                formatChars={formatChars}
-                maskChar=" "
-                className="form-control w-auto"
-                mask='9:59'
-                ref={time}>
-            </InputMask>
+              <InputMask
+                  formatChars={formatChars}
+                  maskChar=" "
+                  className="form-control w-auto d-inline-block align-middle"
+                  mask='9:59'
+                  ref={time}>
+              </InputMask>
+              <button onClick={handleEnter} className="btn btn-primary mx-1">Enter</button>
 
-            <button onClick={handleEnter} className="btn btn-primary">Enter
-            </button>
           </div>
       );
     case 1:
