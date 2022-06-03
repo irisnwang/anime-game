@@ -8,6 +8,7 @@ const HomePage = () => {
         <p>After each question, the correct answer and a clip of the character running at that timestamp will be shown.
           After all questions are answered, the final score will be shown.</p>
         <p>There are currently 11 possible questions, so currently you can pick between 1 and 11 questions to guess.</p>
+        <img src="https://i.kym-cdn.com/photos/images/newsfeed/001/290/210/3d0.gif" alt="SASUKEEEE"/>
       </div>
   )
 }

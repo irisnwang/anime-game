@@ -20,7 +20,7 @@ const AboutPage = () => {
           </ol>
           If this seems not-that-logical, it's because I made this app for fun and it doesn't have to make sense.
         </p>
-
+        <img src="https://animesher.com/orig/1/155/1552/15526/animesher.com_love-live-sunshine-kanan-kawaii-1552687.gif" alt="little demon..."/>
       </div>
   )
 }

@@ -9,7 +9,7 @@ const RulesPage = () => {
         </p>
         <p>After each question, the correct answer and a clip of the character running at that timestamp will be shown.</p>
         <p>After all questions are answered, the final score will be shown.</p>
-
+        <img src="https://i.pinimg.com/originals/d6/e6/ba/d6e6ba9290406e6c71bb379e865e7ae1.gif" alt="iida"/>
       </div>
   )
 }
