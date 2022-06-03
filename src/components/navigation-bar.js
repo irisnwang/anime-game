@@ -4,7 +4,8 @@ const NavigationBar = () => {
   const location = useLocation()
   const pathname = location.pathname
   return(
-      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar-expand navbar-light bg-light">
+        <div className="container-fluid">
         <ul className="navbar-nav">
           <li className="nav-item">
             <a className={pathname === "/play"? "active nav-link" : "nav-link"} href="/play">{pathname === "/play"? "Restart" : "Start"} <span
@@ -17,6 +18,7 @@ const NavigationBar = () => {
             <a className={pathname === "/about"? "nav-link active" : "nav-link"} href="/about">About</a>
           </li>
         </ul>
+          </div>
       </nav>
   );
 }

@@ -115,12 +115,12 @@ function AnimeGame() {
             <div>
               Actual: {question["answer-string"]}
             </div>
-            <iframe height="360px" width="640px"
-                    src={question["youtube-link"]}
-                    title="YouTube video player" frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen/>
-            <br/>
+            <div className="ratio ratio-16x9 w-50">
+              <iframe src={question["youtube-link"]}
+                      title="YouTube video player" frameBorder="0"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen/>
+            </div>
             <button onClick={handleNext} className="btn btn-primary">Next
             </button>
           </div>
