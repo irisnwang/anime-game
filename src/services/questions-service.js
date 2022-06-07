@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE = process.env.ANIME_API_BASE;
+const API_BASE = process.env.REACT_APP_ANIME_API;
 const QUESTION_API = `${API_BASE}/questions`
 
 export const fetchQuestionByID = async (questionID) => {
