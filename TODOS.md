@@ -1,7 +1,10 @@
 - Make it beautiful (add pictures?)
-- Shift information into database
-- Add shuffling ability
-- Add ability to pick number of questions
-- Add restarts (mid-game, post-game, and change settings)
-- Add how-to-play page
-- Clean up main game into elements
+- Shift information into database v
+- Add shuffling ability v
+- Add ability to pick number of questions v
+- Add restarts (mid-game, post-game, and change settings) v
+- Add how-to-play page v
+- Clean up main game into elements (seems impossible rn)
+- default audio lower (seems impossible rn)
+- running score
+- press enter to enter

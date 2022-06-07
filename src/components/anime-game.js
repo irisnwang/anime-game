@@ -1,9 +1,7 @@
-import AudioPlayer from "./game-components/audio-player";
 import formatChars from "./game-components/text-box";
-import questions from "./game-components/example-question.json"
-import {useState, useRef} from "react";
+import {useState, useRef, useEffect} from "react";
 import InputMask from "react-input-mask";
-// import {fetchQuestionByID} from "../services/questions-service";
+import {fetchQuestionByID} from "../services/questions-service";
 
 function AnimeGame() {
   // Hooks
@@ -14,19 +12,25 @@ function AnimeGame() {
   const [question, setQuestion] = useState({})
   const [max, setMax] = useState(11);
   const time = useRef()
+  const audio = useRef()
   const [array, setArray] = useState([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 
   const shuffle = () => {
     const shuffledArray = array.sort((a, b) => 0.5 - Math.random());
     setArray(shuffledArray)
+    console.log(shuffledArray)
   }
 
-  const getNextQuestion = (idx) => {
-    // const nextQuestion = fetchQuestionByID(idx)
-    const nextQuestion = questions[idx]
+  const getNextQuestion = async (idx) => {
+    console.log(idx)
+    const nextQuestion = await fetchQuestionByID(idx)
     setQuestion(nextQuestion)
-    // console.log(idx)
   }
+
+  useEffect(() =>{
+    if (audio.current)
+      audio.current.load();
+  }, [question])
 
   // Helpers
   const correctness = () => {
@@ -93,7 +97,11 @@ function AnimeGame() {
             <h2>Anime: {question.anime}</h2>
             <h2>Song: {question["song-title"]}</h2>
             <h3>By {question.artist}</h3>
-            <AudioPlayer driveLink={question["drive-link"]}/>
+            <div>
+              <audio className="container-audio" controls autoPlay={true} loop={false} ref={audio}>
+                <source src={`https://drive.google.com/uc?export=view&id=${question["drive-link"]}`}/>
+              </audio>
+            </div>
               <InputMask
                   formatChars={formatChars}
                   maskChar=" "
@@ -102,7 +110,6 @@ function AnimeGame() {
                   ref={time}>
               </InputMask>
               <button onClick={handleEnter} className="btn btn-primary mx-1">Enter</button>
-
           </div>
       );
     case 1:
