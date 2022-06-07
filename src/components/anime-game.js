@@ -18,11 +18,9 @@ function AnimeGame() {
   const shuffle = () => {
     const shuffledArray = array.sort((a, b) => 0.5 - Math.random());
     setArray(shuffledArray)
-    console.log(shuffledArray)
   }
 
   const getNextQuestion = async (idx) => {
-    console.log(idx)
     const nextQuestion = await fetchQuestionByID(idx)
     setQuestion(nextQuestion)
   }
