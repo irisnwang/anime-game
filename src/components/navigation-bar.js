@@ -11,7 +11,7 @@ const NavigationBar = () => {
         <div className="container-fluid">
           <a className={pathname === "/play" ? "ms-2 active navbar-brand"
               : "ms-2 navbar-brand"} href="/play">{pathname === "/play" ? "Restart"
-              : "Start Playing"} </a>
+              : "Start"} </a>
           <ul className="navbar-nav me-auto">
             <li className="nav-item">
 
