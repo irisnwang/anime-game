@@ -12,3 +12,4 @@
 - [ ] get length of collection as max possbile # questions
   - get length 
   - generate array (currently hardcoded 0-10 num array)
+- [ ] ~~share results~~  

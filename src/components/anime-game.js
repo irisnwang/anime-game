@@ -159,8 +159,8 @@ function AnimeGame() {
     case 2:
       return (
           <div className="container mt-2">
-            <h1>Finished!</h1>
-            <h2>You got: {numCorrect}/{max} right!</h2>
+            <h1 className="text-center">Finished!</h1>
+            <h2 className="text-center">You got: {numCorrect}/{max} right!</h2>
           </div>);
     default:
       return <p>Error</p>
