@@ -1,6 +1,7 @@
 import './App.css';
 import './vendors/bootstrap/css/bootstrap.min.css';
 import './vendors/fontawesome/css/all.min.css';
+import './vendors/bootswatch/bootstrap.min.css'
 import Game from "./components";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import AnimeGame from "./components/anime-game";

@@ -25,17 +25,18 @@ function AnimeGame() {
     setQuestion(nextQuestion)
   }
 
-  useEffect(() =>{
-    if (audio.current)
+  useEffect(() => {
+    if (audio.current) {
       audio.current.load();
+    }
   }, [question])
 
   // Helpers
   const correctness = () => {
     if (correct) {
-      return <h1>CORRECT!</h1>
+      return <h3 className="text-center text-primary">CORRECT!</h3>
     }
-    return <h1>INCORRECT!</h1>
+    return <h3 className="text-center text-secondary">INCORRECT!</h3>
   }
 
   const verifyAnswer = () => {
@@ -79,55 +80,80 @@ function AnimeGame() {
 
   switch (show) {
     case -1:
-      return (<div className="container mt-2">
-        <div className="form-group">
-          <h2><label htmlFor="formControlRange">Select number of questions: </label></h2>
-          <input type="range" className="form-control-range w-25"
-                 id="formControlRange" min="1" max="11" onChange={e => setMax(e.target.value)}/>
-          <h5 className="d-inline-flex mx-2">{max}</h5>
-        </div>
-        <button onClick={handleBegin} className="btn btn-primary">Start Playing
-        </button>
-      </div>);
+      return (
+          <div className="container mt-2">
+            <div className="form-group">
+              <h2 className="text-center"><label htmlFor="formControlRange">Select number of
+                questions: </label></h2>
+              <div className="d-flex justify-content-center align-items-center">
+                <input type="range" className="form-range w-25"
+                       id="formControlRange" min="1" max="11"
+                       onChange={e => setMax(e.target.value)}/>
+                <h3 className="d-inline-flex mx-2">{max}</h3>
+              </div>
+            </div>
+            <div className="d-flex justify-content-center align-items-center">
+            <button onClick={handleBegin}
+                    className="btn btn-primary rounded">Start Playing
+            </button>
+            </div>
+          </div>);
     case 0:
       return (
           <div className="container mt-2">
-            <h2>Anime: {question.anime}</h2>
-            <h2>Song: {question["song-title"]}</h2>
-            <h3>By {question.artist}</h3>
-            <div>
-              <audio className="container-audio" controls autoPlay={true} loop={false} ref={audio}>
-                <source src={`https://drive.google.com/uc?export=view&id=${question["drive-link"]}`}/>
-              </audio>
+            <div className="clearfix">
+              <h4 className="float-end">Current Score: {numCorrect}/{count}</h4>
             </div>
-              <InputMask
-                  formatChars={formatChars}
-                  maskChar=" "
-                  className="form-control w-auto d-inline-block align-middle"
-                  mask='9:59'
-                  ref={time}>
-              </InputMask>
-              <button onClick={handleEnter} className="btn btn-primary mx-1">Enter</button>
+            <h3 className="text-center">Anime: {question.anime}</h3>
+            <h4 className="text-center">Song: {question["song-title"]}</h4>
+                <h4 className="text-center">By {question.artist}</h4>
+                <div className="d-flex justify-content-center align-items-center">
+                  <audio className="container-audio" controls autoPlay={false}
+                         loop={false} ref={audio}>
+                    <source
+                        src={`https://drive.google.com/uc?export=view&id=${question["drive-link"]}`}/>
+                  </audio>
+                </div>
+                <form className="mt-2 d-flex justify-content-center align-items-center" onSubmit={handleEnter}>
+                  <InputMask
+                      formatChars={formatChars}
+                      maskChar=" "
+                      className="form-control rounded w-auto d-inline-block align-middle"
+                      mask='9:59'
+                      ref={time}>
+                  </InputMask>
+                  <button onClick={handleEnter}
+                          className="btn btn-primary rounded mx-1">Enter
+                  </button>
+                </form>
           </div>
       );
     case 1:
       return (
           <div className="container mt-2">
-            {correctness()}
-            <div>
+            <div className="clearfix">
+              <h4 className="float-end">Current Score: {numCorrect}/{count + 1}</h4>
+            </div>
+              {correctness()}
+            <div className="text-center">
               You said: {time.current.value}
             </div>
-            <div>
+            <div className="text-center">
               Actual: {question["answer-string"]}
             </div>
-            <div className="ratio ratio-16x9 w-50">
-              <iframe src={question["youtube-link"]}
-                      title="YouTube video player" frameBorder="0"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen/>
+            <div className="d-flex justify-content-center align-items-center">
+              <div className="ratio ratio-16x9 w-50 my-2">
+                <iframe src={question["youtube-link"]}
+                        title="YouTube video player" frameBorder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen/>
+              </div>
             </div>
-            <button onClick={handleNext} className="btn btn-primary">Next
-            </button>
+            <div className="d-flex justify-content-center align-items-center">
+              <button onClick={handleNext}
+                      className="btn btn-primary rounded">Next
+              </button>
+            </div>
           </div>
       );
     case 2:

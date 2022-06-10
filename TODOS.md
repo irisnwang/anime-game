@@ -1,10 +1,14 @@
-- Make it beautiful (add pictures?)
-- Shift information into database v
-- Add shuffling ability v
-- Add ability to pick number of questions v
-- Add restarts (mid-game, post-game, and change settings) v
-- Add how-to-play page v
-- Clean up main game into elements (seems impossible rn)
-- default audio lower (seems impossible rn)
-- running score
-- press enter to enter
+###TODO:
+- [x] Make it beautiful (add pictures?)
+- [x] Shift information into database
+- [x] Add shuffling ability 
+- [x] Add ability to pick number of questions 
+- [x] Add restarts (mid-game, post-game, and change settings) 
+- [x] Add how-to-play page 
+- [ ] ~~Clean up main game into elements~~
+- [ ] ~~default audio lower~~
+- [x] running score
+- [x] press enter to enter
+- [ ] get length of collection as max possbile # questions
+  - get length 
+  - generate array (currently hardcoded 0-10 num array)

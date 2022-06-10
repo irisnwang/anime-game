@@ -3,11 +3,10 @@ import {Outlet} from "react-router-dom";
 
 function Game() {
   return (
-      <div>
-
+      <div className="my-4">
         <div className="row mt-2">
           <h1 className="text-center">
-            <a href="/" className="text-black text-decoration-none">Guess the Point in the Anime Opening Song at Which a Character Starts Running</a>
+            <a href="/" className="text-decoration-none">Guess the Point in the Anime Opening Song at Which a Character Starts Running</a>
           </h1>
         </div>
         <div className="container">
